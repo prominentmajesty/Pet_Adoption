@@ -1,0 +1,23 @@
+{
+  "name": "online_pet_adoption",
+  "version": "1.0.0",
+  "description": "Online Pet Management System",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Majesty",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "connect-flash": "^0.1.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.2",
+    "express-validator": "^5.3.1",
+    "fs": "0.0.1-security",
+    "handlebars": "^4.1.2",
+    "mongoose": "^5.6.12",
+    "multer": "^1.4.2"
+  }
+}
