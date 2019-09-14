@@ -1,6 +1,11 @@
 const express = require('express');
-const exphbs = require(express-handlebars);
+const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
+const session = require('express-session');
+const flash = require('connect-flash');
+
 
 //local imports
 const {config} = require('./database/database');
@@ -8,6 +13,9 @@ const {config} = require('./database/database');
 
 var app = express();
 
+mongoose.connect(config, {
+    useUnifiedTopology: true,useNewUrlParser: true
+});
 const conn = mongoose.connection;
 
 conn.once('open', () => {
@@ -46,5 +54,5 @@ app.use((req,res,next)=>{
   });
 
 app.listen(Port, ()=>{
-    Console.log('App Is Listening On Port 3000');
+console.log('App Is Listening On Port 3000');
 });
