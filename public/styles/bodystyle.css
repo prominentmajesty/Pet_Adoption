@@ -5,13 +5,13 @@
 .navbar{
     background-color:white;
    /*background-color: #a7b018;*/
-    border-bottom: 1px blanchedalmond;
-    box-shadow: 0 0 5px 2px rgb(0,0,0,0.5);
+    border-bottom: 1.4px solid white;
+    box-shadow: 0 0 3px 4px rgb(0.1,0.2,0,0.3);
     padding: 0px 0px 0px 0px;
 }
 
 .collapse{
-    padding-right : 80px;
+    padding-right : 40px;
     padding-top : 10px;
     padding-bottom : 8px  
 } 
@@ -24,4 +24,13 @@
     font-family:'Rajdhani','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     color:blue; 
+}
+
+.navbar-nav span{
+    padding-right: 10px;
+}
+
+.navbar-nav .nav-item .fas,.fab{
+    color:rgb(125, 141, 170);
+
 }
