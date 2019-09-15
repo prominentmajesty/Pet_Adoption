@@ -1,0 +1,27 @@
+*{
+    padding : 0px;
+    margin: 0px;
+}
+.navbar{
+    background-color:white;
+   /*background-color: #a7b018;*/
+    border-bottom: 1px blanchedalmond;
+    box-shadow: 0 0 5px 2px rgb(0,0,0,0.5);
+    padding: 0px 0px 0px 0px;
+}
+
+.collapse{
+    padding-right : 80px;
+    padding-top : 10px;
+    padding-bottom : 8px  
+} 
+
+.collapse .nav-item{
+    padding-left: 20px;
+}
+
+.collapse .nav-item .nav-link{
+    font-family:'Rajdhani','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color:blue; 
+}
