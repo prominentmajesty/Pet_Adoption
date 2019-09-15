@@ -9,6 +9,7 @@ const flash = require('connect-flash');
 
 //local imports
 const {config} = require('./database/database');
+const index = require('./routes/index');
 
 
 var app = express();
@@ -52,6 +53,8 @@ app.use((req,res,next)=>{
     res.locals.error_msg = req.flash('error_msg'); 
     next();
   });
+
+app.use('/', index);
 
 app.listen(Port, ()=>{
 console.log('App Is Listening On Port 3000');
