@@ -93,6 +93,57 @@
     cursor: pointer;
     transition:0.8s
 }
+
+#testimonial .row{
+    margin-top:30px; 
+}
+.col-md-4{
+    margin: 40px auto;
+}
+.profile{
+    padding: 70px 10px 10px;
+    background-color: #efefef;
+}
+.profile img{
+    top:-60px;
+    position: absolute;
+    left: calc(50%-60px);
+    border: 10px solid #fff;
+}
+.user{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transform: translateX(-47%);
+}
+
+/*-------------Team Section----------------*/
+#contact{
+    background: #efefef;
+    padding-top: 40px;
+    padding-bottom:40px;
+    color: #777;    
+}
+.contact-form{
+  padding: 15px;  
+}
+::placeholder{
+    color:#999 !important
+}
+.follow{
+    background: #fff;
+    padding: 10px;
+    margin: 15px; 
+
+}
+.contact-info .fas{
+    margin: 10px;
+    color: #007bff;
+    font-weight: bold;
+}
+.contact-info label{
+    margin: 5px
+}
 /*-------------Team Section----------------*/
 #team{
     padding-top: 50px;
@@ -100,9 +151,12 @@
     color:#555; 
 }
 #team h1{
-    text-align: center;
     color: #555 !important;
     padding-bottom: 10px;
+ 
+}
+#team .ourteam{
+padding-left: 196px 
 }
 #team .container h1::after{
     content: '';
@@ -110,7 +164,7 @@
     height: 3px;
     width: 170px;
     display: block;
-    margin: 20px auto;
+    
 }
 .profile-pic{
     margin-top: 25px;
@@ -185,7 +239,15 @@
     transition: 0.5s;
     background: rgb(88, 37, 18); /*..........position: absolute*/;
 }
-
+.contact-info{
+    margin-top: 245px; 
+}
+.contact-info .center{
+    font-family: 'Quantico', sans-serif;
+    font-size: 25px;
+    margin-left: 15px;
+    color : rgb(88, 37, 18); 
+}
 /*----------------PRICE PLAN SECTION-----------------*/
 .germanPet img{
     height: 125px; 
@@ -230,13 +292,14 @@
 }
 #price .col-div{
     border: 1px white;
-    box-shadow: 0 0 5px 2px rgb(0,0,0,0.5);
+    box-shadow: 0 0 5px 2px rgb(0,0,0,0.5); 
     margin-top: 50px;
     padding-bottom: 4px; 
     padding-left: 5px;
     padding-right: 5px; 
     margin-left: 44px;
-    margin-right: 44px 
+    margin-right: 44px; 
+    background-color : white 
 }
 .petNameLabel .Feuture{
     margin-top: 78px;
@@ -250,7 +313,7 @@ ul li:last-child{
 }
 .petNameLabel .Feuture ul li{
     list-style: none;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Rajdhani', sans-serif; 
     border: 1.3px solid  #efefef;
     padding: 8px 7px;
 }
@@ -274,4 +337,9 @@ ul li:last-child{
     font-size: 25px;
     color:rgba(214, 50, 28, 0.719) !important;
     margin-left : 10px; 
+}
+.formater{
+    padding : 15px 0px 15px 0px ;
+    margin-top : -611px;
+    z-index: 1px
 }
