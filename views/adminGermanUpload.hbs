@@ -1,0 +1,30 @@
+{{> header}}
+<div id="adminUpload">
+    <div class="container" id="cont">
+        <h4>German Shephered</h4>
+        <form method="POST" action="/admin/adminGermanPost" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Name Of Pet</label>
+                <input type="text" name="germanPetName" class="form-control" id="formGroupExampleInput" placeholder="Name Of Pet">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Price Of Pet</label>
+                <input type="text" name="GermanPetPrice" class="form-control" id="formGroupExampleInput2" placeholder="Price Of Pet">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Category Of Pet</label>
+                <input type="text" name="GermanPetCategory" class="form-control" id="formGroupExampleInput2" placeholder="Category Of Pet">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Color Of Pet</label>
+                <input type="text" name="GermanPetColor" class="form-control" id="formGroupExampleInput2" placeholder="Color Of Pet">
+            </div>
+            <div class="custom-file">
+                <input type="file" name="germanPetImage" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file...</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Information</button>
+        </form>
+    </div>
+</div>
+{{> footer}}

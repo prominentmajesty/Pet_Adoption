@@ -10,6 +10,8 @@ const flash = require('connect-flash');
 //local imports
 const {config} = require('./database/database');
 const index = require('./routes/index');
+const admin = require('./routes/admin');
+const user = require('./routes/user');
 
 
 var app = express();
@@ -33,7 +35,7 @@ app.use(express.static('./public'));
 app.engine('.hbs', exphbs({
     extname: '.hbs',
     defaultLayout: 'main',
-    partialsDir: 'views/partials',
+    partialsDir: 'views/partials'
 }));
 app.set('view engine', '.hbs');
 app.use(bodyParser.json());
@@ -55,6 +57,8 @@ app.use((req,res,next)=>{
   });
 
 app.use('/', index);
+app.use('/admin', admin);
+app.use('/user', user);
 
 app.listen(Port, ()=>{
 console.log('App Is Listening On Port 3000');

@@ -257,6 +257,12 @@ padding-left: 196px
 .germanPet{
     padding-top:15px;
 }
+.PetNameLabelName .h4Class{
+    font-family: 'Quantico', sans-serif;
+    font-size: 14px;
+    margin-left: 35px; 
+    color: green
+}
 .petNameLabel .PetNameLabelName h3{
         color:rgba(214, 50, 28, 0.719);
         font-family: 'Quantico', sans-serif;
@@ -317,9 +323,6 @@ ul li:last-child{
     border: 1.3px solid  #efefef;
     padding: 8px 7px;
 }
-.Feuture .btn{
-    margin-left: 75px;
-} 
 .Feuture ul li .far{
     padding-left : 32px;
     padding-right: 15px
@@ -338,8 +341,11 @@ ul li:last-child{
     color:rgba(214, 50, 28, 0.719) !important;
     margin-left : 10px; 
 }
-.formater{
-    padding : 15px 0px 15px 0px ;
-    margin-top : -611px;
-    z-index: 1px
+.row .pad{
+    padding-left: 22px
+}
+.col-12 .btn{
+    margin-left:13px;
+    margin-bottom: 12px
+
 }

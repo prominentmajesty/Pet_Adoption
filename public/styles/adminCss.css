@@ -1,0 +1,29 @@
+
+.containerBox{
+    border-top: 2.5px solid green;
+    border-bottom: 2.5px solid green;
+    margin-top:50px; 
+    padding-top : 40px;
+    padding-bottom : 40px   
+}
+.row .colBox{
+    border: 1px white;
+    box-shadow: 0 0 5px 2px rgb(0,0,0,0.5); 
+    margin-left: 69px;
+    padding: 20px 0px 20px 0px;
+}
+.imageBox img{
+    height: 215px; 
+    width: 265px;
+    margin-left:10px;
+}
+#adminUpload{
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+.custom-file{
+    margin-top: 15px
+}
+.btn{
+    margin-top : 20px
+}
