@@ -21,6 +21,7 @@ var userSchema = mongoose.Schema({
         type : String,
         required : true
     },
+    
     dateOfAdoption : {
         type: String,
         default: moment().format('MMMM Do YYYY')
@@ -51,3 +52,5 @@ var userSchema = mongoose.Schema({
         required : true
     }
 });
+
+module.exports = User = mongoose.model('User', userSchema);

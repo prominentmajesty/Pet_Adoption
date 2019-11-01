@@ -35,7 +35,10 @@ app.use(express.static('./public'));
 app.engine('.hbs', exphbs({
     extname: '.hbs',
     defaultLayout: 'main',
-    partialsDir: 'views/partials'
+    partialsDir: 'views/partials',
+    helpers : {
+        base64ArrayBuffer : require('./utils/base64ArrayBuffer')
+    }
 }));
 app.set('view engine', '.hbs');
 app.use(bodyParser.json());
