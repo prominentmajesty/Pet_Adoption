@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
-const session = require('express-session');
+var session = require('express-session');
 const flash = require('connect-flash');
 
 

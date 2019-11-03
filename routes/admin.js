@@ -75,11 +75,11 @@ router.post('/adminaAmericanPost',upload.single('americanPetImage'), (req, res)=
 
     let err = req.validationErrors();
     if(err){
-        session.errors = err;
+        req.session.errors = err;
         res.render('adminAmericanUpload', {
                     style : 'adminCss.css',
                     script : 'adminScript.js',
-                    err : session.errors
+                    err : req.session.errors
         });
     }else if(file === undefined){
         res.render('adminAmericanUpload', { 
@@ -102,7 +102,7 @@ router.post('/adminaAmericanPost',upload.single('americanPetImage'), (req, res)=
                      if(err)
                          throw err;
                 });
-                 req.flash('success_message', 'Information successfully uploaded');
+                 req.flash('success_msg', 'Information successfully uploaded');
                  res.redirect('/admin/adminAmericanUpload');  
 
         },(err)=>{
@@ -125,11 +125,11 @@ router.post('/adminEnglishPost', upload.single('englishPetImage'), (req, res)=>{
 
         let err = req.validationErrors();
         if(err){
-            session.errors = err;
+            req.session.errors = err;
             res.render('adminEnglishUpload',{
                 style : 'adminCss.css',
                 script : 'adminScript.js',
-                err : session.errors
+                err : req.session.errors
             });
         }else if(file === undefined){
             res.render('adminEnglishUpload',{
@@ -153,7 +153,7 @@ router.post('/adminEnglishPost', upload.single('englishPetImage'), (req, res)=>{
                         if(err)
                         throw err;
                 }); 
-                req.flash('success_message', 'Information succesfully uploaded');
+                req.flash('success_msg', 'Information succesfully uploaded');
                 res.redirect('/admin/adminEnglishUpload');            
            });
         }
@@ -174,11 +174,11 @@ router.post('/adminGermanPost',  upload.single('germanPetImage'), (req, res)=>{
 
     let err = req.validationErrors();
     if(err){
-        session.errors = err;
+        req.session.errors = err;
         res.render('adminGermanUpload',{
             style : 'adminCss.css',
             script : 'adminScript.js',
-            err : session.errors
+            err : req.session.errors
         });
     }else if(file === undefined){
         res.render('adminGermanUpload',{
@@ -202,7 +202,7 @@ router.post('/adminGermanPost',  upload.single('germanPetImage'), (req, res)=>{
                     if(err)
                     throw err;
             }); 
-            req.flash('success_message', 'Information succesfully uploaded');
+            req.flash('success_msg', 'Information succesfully uploaded');
             res.redirect('/admin/adminGermanUpload');            
        });
     }

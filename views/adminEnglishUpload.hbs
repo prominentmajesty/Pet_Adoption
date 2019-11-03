@@ -1,7 +1,33 @@
 {{> header}}
 <div id="adminUpload">
     <div class="container" id="cont">
-        <h4>American Ninja</h4>
+          {{#if err}}
+            <div class="row">
+                {{#each err}}
+                   <div class="col-12">
+                    <div class="alert alert-warning" role="alert">
+                        {{this.msg}}
+                    </div>
+                   </div>
+                {{/each}}
+            </div>
+        {{else}}
+            <div class="noError"></div>      
+        {{/if}}
+
+        {{#if fileError}}
+           <div class="alert alert-danger" role="alert">
+                {{fileError}}
+            </div>
+        {{else}}
+            <div class="noError"></div>
+        {{/if}}
+         {{#if success_msg}}
+            <div class="alert alert-success" role="alert">
+                {{success_msg}}
+            </div>
+        {{/if}}
+        <h4>English Pet</h4>
         <form method="POST" action="/admin/adminEnglishPost" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="formGroupExampleInput">Name Of Pet</label>

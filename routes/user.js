@@ -29,21 +29,33 @@ router.get('/germanFormPage',(req,res)=>{
     });
 });
 
-router.get('/americanAdoption', function(req, res){
-    AmericanModel.find({}, (err, result)=>{
+router.get('/adoptionPage', function(req, res){
+    AmericanModel.find({}, (err, doc1)=>{
         if(err){
             return console.log(err);
         }
-        res.render('americanAdoption', { 
-            title : 'American Adoption',
-            style : 'userScript.css',
-            script : 'userScript.js',
-            result
+        EnglishModel.find({}, (err,doc2)=>{
+            if(err){
+                return console.log(err)
+            }
+        GermanModel.find({}, (err, doc3)=>{
+                if(err){
+                    return console.log(err);
+                }
+                res.render('adoptionPage',{
+                    title : 'Adoption Page',
+                    style : 'userStyle.css',
+                    script : 'userScript.js',
+                    doc1,
+                    doc2,
+                    doc3
+                });
+            });
         });
     });
 });
-
-router.get('/englishAdoption', function(req,res){
+router.post('/americanAdoption')
+/*router.get('/englishAdoption', function(req,res){
     EnglishModel.find({}, function(err, result1){
         if(err){
             return console.log(err);
@@ -69,7 +81,7 @@ router.get('/germanAdoption', function(req, res){
             result2
         });
     });
-});
+});*/
 
 
 
