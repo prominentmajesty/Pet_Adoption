@@ -1,6 +1,26 @@
 {{> header}}
 <div id="adminUpload">
     <div class="container" id="cont">
+        {{#if err}}
+            <div class="row">
+                {{#each err}}
+                    <div class="col-md-12">
+                        <div class="alert alert-warning" role="alert">
+                          {{this.msg}}  
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{/if}}
+        {{#if success_msg}}
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-success" role="alert">
+                        {{success_msg}}
+                    </div>
+                </div>
+            </div>
+        {{/if}}
         <h4>Adopt Your American Pets</h4>
         <form method="POST" action="/user/americanForm">
             <div class="form-group">
@@ -13,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Name of pet:</label>
-                <input type="text" name="NameOfPet" class="form-control" id="formGroupExampleInput2" placeholder="Price Of Pet">
+                <input type="text" name="nameOfPet" class="form-control" id="formGroupExampleInput2" placeholder="Price Of Pet">
             </div>
             <div class="form-group">
             <div class="form-group">

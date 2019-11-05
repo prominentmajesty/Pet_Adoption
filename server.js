@@ -49,7 +49,7 @@ app.use(session({
     resave: true,
     saveUninitialized: false,
     cookie: {
-        maxAge: 300000
+        maxAge: 300000 
     }
 }));
 app.use(flash());

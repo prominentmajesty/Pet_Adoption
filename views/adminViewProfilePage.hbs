@@ -1,0 +1,52 @@
+{{> header}}
+    <div class= "container" style="padding-top: 40px">
+        <div class="row">
+            <div class="col-12">
+                <form method = "POST" action ="/admin/profileTextField">
+                    <div class="form-group">
+                        {{#if err}}
+                            <div class ="row">
+                                {{#each err}}
+                                    <div class="col-12">
+                                        <div class="alert alert-warning" role="alert">
+                                        {{err}}
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        {{/if}}
+                        <label for="exampleFormControlInput1">Customer ID:</label>
+                        <input type="text" name ="profileTextField" class="form-control" id="exampleFormControlInput1" placeholder="Enter Customer ID">
+                        <div class="buttonClick">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="displayResults">
+            <div class="result">
+                {{#if result }}
+                    <div class="row">
+                        {{#each result}}
+                            <div class="col-12">
+                                <h3>Name Of Adoptor : {{this.nameOfAdoptor}}</h3>
+                                <h3>Pet Color : {{this.petColor}}</h3>
+                                <h3>Name of Pet : {{this.nameOfPet}}</h3>
+                                <h3>Email Of Adoptor : {{this.emailOfAdoptor}}</h3>
+                                <h3>Phone Number : {{this.phoneNumber}}</h3>
+                                <h3>Pet ID : {{this.petID}}</h3>
+                                <h3>Pet Price : {{this.petPrice}}</h3>
+                                <h3>Bank Name : {{this.bankName}}</h3>
+                                <h3>Card Number : {{this.cardNumber}}</h3>
+                                <h3>Date Of Adoption : {{this.dateOfAdoption}}</h3>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{else}}
+                    <div class="noting"></div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+{{> footer}}

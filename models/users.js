@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const moment = require('moment');
 
 var userSchema = mongoose.Schema({
-    nameOfAdapter : {
+    nameOfAdoptor : {
         type : String,
         required : true 
     },
@@ -12,22 +12,17 @@ var userSchema = mongoose.Schema({
         required : true
     },
 
-    emailOfAdaptor : {
+    nameOfPet : {
+        type :String,
+        required : true
+    },
+
+    emailOfAdoptor : {
         type : String,
         required : true
     },
 
     phoneNumber : {
-        type : String,
-        required : true
-    },
-    
-    dateOfAdoption : {
-        type: String,
-        default: moment().format('MMMM Do YYYY')
-    },
-
-    petName : {
         type : String,
         required : true
     },
@@ -50,7 +45,12 @@ var userSchema = mongoose.Schema({
     cardNumber : {
         type : String,
         required : true
-    }
+    },
+
+     dateOfAdoption : {
+        type: String,
+        default: moment().format('MMMM Do YYYY')
+    },
 });
 
 module.exports = User = mongoose.model('User', userSchema);

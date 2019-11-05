@@ -2,6 +2,7 @@ var express = require('express');
 var GermanModel = require('../models/german');
 var AmericanModel = require('../models/america');
 var EnglishModel = require('../models/english');
+var User = require('../models/users');
 var multer = require('multer');
 var fs = require('fs');
 const base64ArrayBuffer = require('../utils/base64ArrayBuffer');
@@ -53,12 +54,39 @@ router.get('/adminEnglishUpload', function(req,res){
 });
 
 router.get('/adminViewProfilePage', function(req,res){
-    res.render('/adminViewProfilePage', {
+    res.render('adminViewProfilePage', {
         title : 'Profile Page',
         style : 'adminCss.css',
         script : 'adminScript.js'
     });
 });
+
+router.post('/profileTextField', (req, res)=>{
+    let profileTextField = req.body.profileTextField;
+    req.checkBody('profileTextField','Profile Text Field Should Not Be Empty').notEmpty();
+    var errHolder = req.validationErrors();
+    if(errHolder){
+        req.session.errors = errHolder;
+      return res.render('adminViewProfilePage',{
+            title : 'Admin View Profile',
+            styles : 'adminCss.css',
+            script : 'adminScript.js',
+            err : req.session.errors
+        });
+    }
+    User.find({_id : profileTextField}, (err, result)=>{
+            if(err){
+                console.log(err);
+                return res.status(500).send(err);
+            }
+            res.render('adminViewProfilePage',{
+                    title : "Profile",
+                    style : 'adminCss.css',
+                    script : 'adminScript.js',
+                    result
+            });
+        });
+    });
 
 router.post('/adminaAmericanPost',upload.single('americanPetImage'), (req, res)=>{
     

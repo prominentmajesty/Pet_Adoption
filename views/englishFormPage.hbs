@@ -1,6 +1,26 @@
 {{> header}}
 <div id="adminUpload">
     <div class="container" id="cont">
+        {{#if err}}
+            <div class="row">
+                {{#each err}}
+                    <div class="col-md-12">
+                        <div class="alert alert-warning" role="alert">
+                          {{this.msg}}  
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{/if}}
+        {{#if success_msg}}
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-success" role="alert">
+                        {{success_msg}}
+                    </div>
+                </div>
+            </div>
+        {{/if}}
         <h4>Adopt Your English Pets</h4>
         <form method="POST" action="/user/englishForm">
             <div class="form-group">
