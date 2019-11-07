@@ -9,15 +9,17 @@
                                 {{#each err}}
                                     <div class="col-12">
                                         <div class="alert alert-warning" role="alert">
-                                        {{err}}
+                                        {{this.msg}}
                                         </div>
                                     </div>
                                 {{/each}}
                             </div>
+                        {{else}}
+                            <div class="noResult"></div>
                         {{/if}}
                         <label for="exampleFormControlInput1">Customer ID:</label>
                         <input type="text" name ="profileTextField" class="form-control" id="exampleFormControlInput1" placeholder="Enter Customer ID">
-                        <div class="buttonClick">
+                        <div class="buttonClick" style="padding-top: 15px">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
