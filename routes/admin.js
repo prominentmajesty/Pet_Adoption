@@ -5,6 +5,7 @@ var EnglishModel = require('../models/english');
 var User = require('../models/users');
 var multer = require('multer');
 var fs = require('fs');
+//var ObjectId = require('mongodb').ObjectId;
 const base64ArrayBuffer = require('../utils/base64ArrayBuffer');
 var router = express.Router();
 
@@ -62,7 +63,8 @@ router.get('/adminViewProfilePage', function(req,res){
 });
 
 router.post('/profileTextField', (req, res)=>{
-    let profileTextField = req.body.profileTextField;
+    var profileTextField = req.body.profileTextField;
+    console.log(profileTextField);
     req.checkBody('profileTextField','Profile Text Field Should Not Be Empty').notEmpty();
     var errHolder = req.validationErrors();
     if(errHolder){
@@ -74,19 +76,19 @@ router.post('/profileTextField', (req, res)=>{
             err : req.session.errors
         });
     }
-    User.find({_id : profileTextField}, (err, result)=>{
-            if(err){
-                console.log(err);
-                return res.status(500).send(err);
-            }
+        //var ID = new ObjectId(profileTextField);
+        User.findOne({_id:profileTextField}).then((result)=>{
+            console.log(result);
             res.render('adminViewProfilePage',{
                     title : "Profile",
                     style : 'adminCss.css',
                     script : 'adminScript.js',
                     result
             });
+        }).catch((err)=>{
+            console.log(err);
         });
-    });
+})
 
 router.post('/adminaAmericanPost',upload.single('americanPetImage'), (req, res)=>{
     
@@ -132,7 +134,6 @@ router.post('/adminaAmericanPost',upload.single('americanPetImage'), (req, res)=
                 });
                  req.flash('success_msg', 'Information successfully uploaded');
                  res.redirect('/admin/adminAmericanUpload');  
-
         },(err)=>{
             console.log(err);
         });

@@ -28,22 +28,20 @@
         </div>
         <div class="displayResults">
             <div class="result">
-                {{#if result }}
+                {{#if result}}
                     <div class="row">
-                        {{#each result}}
                             <div class="col-12">
-                                <h3>Name Of Adoptor : {{this.nameOfAdoptor}}</h3>
-                                <h3>Pet Color : {{this.petColor}}</h3>
-                                <h3>Name of Pet : {{this.nameOfPet}}</h3>
-                                <h3>Email Of Adoptor : {{this.emailOfAdoptor}}</h3>
-                                <h3>Phone Number : {{this.phoneNumber}}</h3>
-                                <h3>Pet ID : {{this.petID}}</h3>
-                                <h3>Pet Price : {{this.petPrice}}</h3>
-                                <h3>Bank Name : {{this.bankName}}</h3>
-                                <h3>Card Number : {{this.cardNumber}}</h3>
-                                <h3>Date Of Adoption : {{this.dateOfAdoption}}</h3>
+                                <h5>Name Of Adoptor : {{result.nameOfAdoptor}}</h5>
+                                <h5>Pet Color : {{result.petColor}}</h5>
+                                <h5>Name of Pet : {{result.nameOfPet}}</h5>
+                                <h5>Email Of Adoptor : {{result.emailOfAdoptor}}</h5>
+                                <h5>Phone Number : {{result.phoneNumber}}</h5>
+                                <h5>Pet ID : {{result.petID}}</h5>
+                                <h5>Pet Price : {{result.petPrice}}</h5>
+                                <h5>Bank Name : {{result.bankName}}</h5>
+                                <h5>Card Number : {{result.cardNumber}}</h5>
+                                <h5>Date Of Adoption : {{result.dateOfAdoption}}</h5>
                             </div>
-                        {{/each}}
                     </div>
                 {{else}}
                     <div class="noting"></div>
