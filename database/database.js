@@ -1,3 +1,3 @@
 module.exports = {
-    config : 'mongodb+srv://majesty:majesty@pet-adoption-mntxn.mongodb.net/test?retryWrites=true&w=majority'
+    config : 'mongodb+srv://majesty:majesty@onyii-pet-adoption.zlxg1.mongodb.net/majesty?retryWrites=true&w=majority'
 }
